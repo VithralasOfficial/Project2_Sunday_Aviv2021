@@ -6,6 +6,8 @@ public class DoorMotion : MonoBehaviour
 {
 
     private Animator anim;
+    public AudioSource open;
+    public AudioSource close;
 
     // Start is called before the first frame update
     void Start()
@@ -16,11 +18,13 @@ public class DoorMotion : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         anim.SetBool("isOpen", true);
+        open.PlayDelayed(0.7f);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        anim.SetBool("isOpen", false);   
+        anim.SetBool("isOpen", false);
+        close.PlayDelayed(0.7f);
     }
 
     // Update is called once per frame
