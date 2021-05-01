@@ -6,11 +6,11 @@ public class DoorMotion : MonoBehaviour
 {
 
     private Animator anim;
-    public GameObject gameobject;
+
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameobject.GetComponent<Animator>();
+        anim = transform.gameObject.GetComponent<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
